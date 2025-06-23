@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://c6lchxmek3any"]
+[gd_scene load_steps=50 format=3 uid="uid://c6lchxmek3any"]
 
 [ext_resource type="Script" uid="uid://biumaho1mi0ur" path="res://main.gd" id="1_1u8w0"]
 [ext_resource type="Script" uid="uid://dbb0m3gh8pibb" path="res://ui.gd" id="1_d13ii"]
@@ -34,6 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://dung0xbr6lxnp" path="res://obstacle_stul.tscn" id="28_jq2sk"]
 [ext_resource type="AudioStream" uid="uid://drqvifxds25bj" path="res://sounds/railway.ogg" id="31_seu75"]
 [ext_resource type="PackedScene" uid="uid://c7fy4ba4s1ti8" path="res://Banana.tscn" id="32_ban"]
+[ext_resource type="Texture2D" uid="uid://csnhnjduld8wu" path="res://img/itemy/banana.png" id="33_icon"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_d13ii"]
 font = ExtResource("1_ryguw")
@@ -227,6 +228,14 @@ offset_bottom = 96.0
 text = "0"
 label_settings = SubResource("LabelSettings_d13ii")
 horizontal_alignment = 2
+
+[node name="BananaIcon" type="TextureRect" parent="UI"]
+offset_left = 1266.0
+offset_top = 72.0
+offset_right = 1310.0
+offset_bottom = 112.0
+texture = ExtResource("33_icon")
+stretch_mode = 3
 
 [node name="Background" type="Node2D" parent="."]
 script = ExtResource("3_h2yge")
