@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://dtl565i0i5mbl" path="res://obstacle_ch.tscn" id="27_htxhm"]
 [ext_resource type="PackedScene" uid="uid://dung0xbr6lxnp" path="res://obstacle_stul.tscn" id="28_jq2sk"]
 [ext_resource type="AudioStream" uid="uid://drqvifxds25bj" path="res://sounds/railway.ogg" id="31_seu75"]
+[ext_resource type="PackedScene" path="res://Banana.tscn" id="32_ban"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_d13ii"]
 font = ExtResource("1_ryguw")
@@ -220,6 +221,13 @@ label_settings = SubResource("LabelSettings_d13ii")
 horizontal_alignment = 1
 language = "cs"
 
+[node name="BananaLabel" type="Label" parent="UI"]
+offset_right = 1279.0
+offset_bottom = 60.0
+text = "0"
+label_settings = SubResource("LabelSettings_d13ii")
+horizontal_alignment = 1
+
 [node name="Background" type="Node2D" parent="."]
 script = ExtResource("3_h2yge")
 
@@ -263,6 +271,7 @@ stream = ExtResource("24_4k2k6")
 script = ExtResource("20_getpj")
 wagon_scene = ExtResource("21_getpj")
 obstacle_scenes = Array[PackedScene]([ExtResource("25_kq58d"), ExtResource("26_seu75"), ExtResource("27_htxhm"), ExtResource("28_jq2sk")])
+banana_scene = ExtResource("32_ban")
 
 [node name="GameOver" type="CanvasLayer" parent="."]
 offset = Vector2(-200, -100)
