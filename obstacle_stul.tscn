@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dung0xbr6lxnp"]
+
+[ext_resource type="Texture2D" uid="uid://dke6kf54aejf8" path="res://img/prekazky/stul.png" id="1_igu1d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_87rtl"]
+size = Vector2(80, 62.5)
+
+[node name="ObstacleStul" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(493, 655)
+scale = Vector2(0.255814, 0.21871)
+texture = ExtResource("1_igu1d")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(536, 688.25)
+shape = SubResource("RectangleShape2D_87rtl")

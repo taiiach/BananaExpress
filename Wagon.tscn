@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://nqfl0x6pal6f"]
+
+[ext_resource type="Script" uid="uid://dnvad2tkom14c" path="res://wagon.gd" id="1_mmxib"]
+[ext_resource type="Texture2D" uid="uid://bp3ms6iau3gev" path="res://img/wagon.png" id="1_wkn6r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmxib"]
+size = Vector2(944, 256)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wkn6r"]
+size = Vector2(107.5, 469)
+
+[node name="Node2D" type="StaticBody2D"]
+script = ExtResource("1_mmxib")
+
+[node name="ObstacleSpawn" type="Node2D" parent="."]
+position = Vector2(73, -257)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wkn6r")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(639, 591)
+shape = SubResource("RectangleShape2D_mmxib")
+
+[node name="WagonDetector" type="Area2D" parent="."]
+
+[node name="WagonZone" type="CollisionShape2D" parent="WagonDetector"]
+position = Vector2(211.25, 231.5)
+shape = SubResource("RectangleShape2D_wkn6r")

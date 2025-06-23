@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://deunaoy5wmbn8"]
+
+[ext_resource type="Texture2D" uid="uid://bn7w3ut22rl0s" path="res://img/prekazky/pec.png" id="1_bvcmp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_87rtl"]
+size = Vector2(54, 71)
+
+[node name="ObstaclePec" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(530, 641)
+scale = Vector2(0.245587, 0.173827)
+texture = ExtResource("1_bvcmp")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(561, 684.5)
+shape = SubResource("RectangleShape2D_87rtl")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c71kal3lrowvt"]
+
+[ext_resource type="Texture2D" uid="uid://cxgp24oa60saj" path="res://img/prekazky/televize.png" id="1_30d0d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vap5s"]
+size = Vector2(215.575, 187.16)
+
+[node name="ObstacleTV" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(522, 641)
+scale = Vector2(0.3, 0.203125)
+texture = ExtResource("1_30d0d")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(566, 691)
+scale = Vector2(0.389655, 0.309896)
+shape = SubResource("RectangleShape2D_vap5s")
