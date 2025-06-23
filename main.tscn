@@ -223,19 +223,16 @@ horizontal_alignment = 1
 language = "cs"
 
 [node name="BananaLabel" type="Label" parent="UI"]
-offset_right = 1263.0
-offset_bottom = 96.0
+offset_right = 1188.0
+offset_bottom = 107.0
 text = "0"
 label_settings = SubResource("LabelSettings_d13ii")
 horizontal_alignment = 2
 
-[node name="BananaIcon" type="TextureRect" parent="UI"]
-offset_left = 1266.0
-offset_top = 72.0
-offset_right = 1310.0
-offset_bottom = 112.0
+[node name="Sprite2D" type="Sprite2D" parent="UI"]
+position = Vector2(1234, 49)
+scale = Vector2(0.0744629, 0.0744629)
 texture = ExtResource("33_icon")
-stretch_mode = 3
 
 [node name="Background" type="Node2D" parent="."]
 script = ExtResource("3_h2yge")
