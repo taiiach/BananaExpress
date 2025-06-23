@@ -49,11 +49,11 @@ func _spawn_wagon_at(x_pos: float):
 						var spawn_banana := new_wagon.get_node_or_null("ObstacleSpawn")
 						if spawn_banana:
 								var stack := 1 + int(current_distance / 500.0)
-                                                                for i in range(stack):
-                                                                               var banana = banana_scene.instantiate()
-                                                                               # Spawn bananas slightly higher so they are harder to collect
-                                                                               banana.position.y -= 40 + i * 30
-                                                                               spawn_banana.add_child(banana)
+								for i in range(stack):
+									var banana = banana_scene.instantiate()
+									 # Spawn bananas slightly higher so they are harder to collect
+									banana.position.y -= 40 + i * 30
+									spawn_banana.add_child(banana)
 
 func _check_for_generation():
 	var rightmost_x := -INF
