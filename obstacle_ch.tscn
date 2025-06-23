@@ -1,11 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://dtl565i0i5mbl"]
 
 [ext_resource type="Texture2D" uid="uid://d2lpcbdj6cfwn" path="res://img/prekazky/crackhead.png" id="1_je6wx"]
+[ext_resource type="Script" path="res://obstacle.gd" id="1_scrpt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_87rtl"]
 size = Vector2(61, 64)
 
 [node name="ObstacleCH" type="Area2D"]
+script = ExtResource("1_scrpt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(528, 651)
