@@ -80,7 +80,7 @@ func _update_achievements():
 						unlocked = Hra.banana_total >= ach.value
 
 				var btn: Button = achievement_buttons[i]
-			   btn.text = ("\u2713 " + ach.label) if unlocked else ach.label
+				btn.text = ("\u2713 " + ach.label) if unlocked else ach.label
 
 func _on_restart_pressed():
 	transition_anim.play("blesk")
