@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7fy4ba4s1ti8"]
+
+[ext_resource type="Texture2D" uid="uid://csnhnjduld8wu" path="res://img/itemy/banana.png" id="1_ej4t0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ej4t0"]
+radius = 32.0
+height = 64.0
+
+[node name="Area2D" type="Area2D"]
+position = Vector2(658, 573)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 1)
+scale = Vector2(0.078125, 0.0621745)
+texture = ExtResource("1_ej4t0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 2)
+shape = SubResource("CapsuleShape2D_ej4t0")
