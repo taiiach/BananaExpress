@@ -36,11 +36,11 @@ func add_distance(amount: float):
                 distance += amount
 
 func add_banana(amount: int = 1):
-                Hra.add_banana(amount)
-                bananas = Hra.banana_total
+				Hra.add_banana(amount)
+				bananas = Hra.banana_total
 
 func reset_bananas():
-                bananas = Hra.banana_total
+				bananas = Hra.banana_total
 
 func reset_distance():
         distance = 0.0

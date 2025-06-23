@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c71kal3lrowvt"]
+[gd_scene load_steps=4 format=3 uid="uid://c71kal3lrowvt"]
 
 [ext_resource type="Texture2D" uid="uid://cxgp24oa60saj" path="res://img/prekazky/televize.png" id="1_30d0d"]
 [ext_resource type="Script" path="res://obstacle.gd" id="1_scrpt"]
