@@ -37,14 +37,21 @@ func _ready():
 		restart_button.pressed.connect(_on_restart_pressed)
 
 		# Build achievements UI
-		achievements_container = VBoxContainer.new()
-		$ColorRect/CenterContainer/VBoxContainer.add_child(achievements_container)
-		for ach in ACHIEVEMENTS:
-				var btn := Button.new()
-				btn.text = ach["label"]
-				btn.disabled = true
-				achievements_container.add_child(btn)
-				achievement_buttons.append(btn)
+                achievements_container = VBoxContainer.new()
+                $ColorRect.add_child(achievements_container)
+                achievements_container.anchor_left = 0
+                achievements_container.anchor_top = 0.5
+                achievements_container.position = Vector2(40, -100)
+
+                for ach in ACHIEVEMENTS:
+                                var btn := Button.new()
+                                btn.text = ach["label"]
+                                btn.disabled = true
+                                achievements_container.add_child(btn)
+                                achievement_buttons.append(btn)
+
+                # Make the name input wider for easier typing
+                line_edit.custom_minimum_size = Vector2(300, 0)
 
 func show_gameover(distance: float, wagons: int):
 		current_distance = distance
