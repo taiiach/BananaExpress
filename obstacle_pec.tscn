@@ -1,9 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://deunaoy5wmbn8"]
 
 [ext_resource type="Texture2D" uid="uid://bn7w3ut22rl0s" path="res://img/prekazky/pec.png" id="1_bvcmp"]
-
-[ext_resource type="Script" path="res://obstacle.gd" id="1_scrpt"]
-
+[ext_resource type="Script" uid="uid://dq6702wlhhuwb" path="res://obstacle.gd" id="1_scrpt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_87rtl"]
 size = Vector2(54, 71)
