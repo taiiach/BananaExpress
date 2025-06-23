@@ -1,11 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://c71kal3lrowvt"]
 
 [ext_resource type="Texture2D" uid="uid://cxgp24oa60saj" path="res://img/prekazky/televize.png" id="1_30d0d"]
+[ext_resource type="Script" path="res://obstacle.gd" id="1_scrpt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vap5s"]
 size = Vector2(215.575, 187.16)
 
 [node name="ObstacleTV" type="Area2D"]
+script = ExtResource("1_scrpt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(522, 641)
