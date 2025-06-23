@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dung0xbr6lxnp"]
 
 [ext_resource type="Texture2D" uid="uid://dke6kf54aejf8" path="res://img/prekazky/stul.png" id="1_igu1d"]
-[ext_resource type="Script" uid="uid://dq6702wlhhuwb" path="res://obstacle.gd" id="1_scrpt"]
+[ext_resource type="Script" path="res://obstacle.gd" id="1_scrpt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_87rtl"]
 size = Vector2(80, 62.5)

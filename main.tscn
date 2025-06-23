@@ -243,6 +243,15 @@ offset_bottom = 360.0
 disabled = true
 text = "ACHIEVEMENT"
 
+[node name="AchievementPopup" type="Button" parent="UI"]
+offset_left = 490.0
+offset_top = 320.0
+offset_right = 790.0
+offset_bottom = 360.0
+text = "ACHIEVEMENT"
+disabled = true
+visible = false
+
 [node name="Background" type="Node2D" parent="."]
 script = ExtResource("3_h2yge")
 
