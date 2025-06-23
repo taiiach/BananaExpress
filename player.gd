@@ -126,9 +126,9 @@ func die():
 	gameover_node.show_gameover(distance_traveled, wagons_skipped)
 
 func register_wagon(id: int):
-        if id != last_wagon_id:
-                wagons_skipped += 1
-                last_wagon_id = id
+		if id != last_wagon_id:
+				wagons_skipped += 1
+				last_wagon_id = id
 
 func collect_banana(amount: int = 1):
-        ui_node.add_banana(amount)
+		ui_node.add_banana(amount)

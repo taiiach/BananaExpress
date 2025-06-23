@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://c6lchxmek3any"]
+[gd_scene load_steps=49 format=3 uid="uid://c6lchxmek3any"]
 
 [ext_resource type="Script" uid="uid://biumaho1mi0ur" path="res://main.gd" id="1_1u8w0"]
 [ext_resource type="Script" uid="uid://dbb0m3gh8pibb" path="res://ui.gd" id="1_d13ii"]
@@ -33,7 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://dtl565i0i5mbl" path="res://obstacle_ch.tscn" id="27_htxhm"]
 [ext_resource type="PackedScene" uid="uid://dung0xbr6lxnp" path="res://obstacle_stul.tscn" id="28_jq2sk"]
 [ext_resource type="AudioStream" uid="uid://drqvifxds25bj" path="res://sounds/railway.ogg" id="31_seu75"]
-[ext_resource type="PackedScene" path="res://Banana.tscn" id="32_ban"]
+[ext_resource type="PackedScene" uid="uid://c7fy4ba4s1ti8" path="res://Banana.tscn" id="32_ban"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_d13ii"]
 font = ExtResource("1_ryguw")
@@ -222,11 +222,11 @@ horizontal_alignment = 1
 language = "cs"
 
 [node name="BananaLabel" type="Label" parent="UI"]
-offset_right = 1279.0
-offset_bottom = 60.0
+offset_right = 1263.0
+offset_bottom = 96.0
 text = "0"
 label_settings = SubResource("LabelSettings_d13ii")
-horizontal_alignment = 1
+horizontal_alignment = 2
 
 [node name="Background" type="Node2D" parent="."]
 script = ExtResource("3_h2yge")

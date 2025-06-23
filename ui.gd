@@ -7,18 +7,18 @@ var bananas := 0
 @onready var banana_label: Label = $BananaLabel
 
 func _process(delta):
-        # Tady se distance pouze zobrazuje
-        score_label.text = "%.2fm" % distance
-        banana_label.text = "%d" % bananas
+		# Tady se distance pouze zobrazuje
+		score_label.text = "%.2fm" % distance
+		banana_label.text = "%d" % bananas
 
 func add_distance(amount: float):
-        distance += amount
+		distance += amount
 
 func add_banana(amount: int = 1):
-        bananas += amount
+		bananas += amount
 
 func reset_bananas():
-        bananas = 0
+		bananas = 0
 
 func reset_distance():
 	distance = 0.0

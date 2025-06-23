@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7fy4ba4s1ti8"]
+[gd_scene load_steps=4 format=3 uid="uid://c7fy4ba4s1ti8"]
 
+[ext_resource type="Script" uid="uid://dahlplopmu0r2" path="res://banana.gd" id="1_ban"]
 [ext_resource type="Texture2D" uid="uid://csnhnjduld8wu" path="res://img/itemy/banana.png" id="1_ej4t0"]
-[ext_resource type="Script" path="res://banana.gd" id="1_ban"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ej4t0"]
 radius = 32.0
