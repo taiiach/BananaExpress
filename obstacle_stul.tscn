@@ -1,11 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://dung0xbr6lxnp"]
 
 [ext_resource type="Texture2D" uid="uid://dke6kf54aejf8" path="res://img/prekazky/stul.png" id="1_igu1d"]
+[ext_resource type="Script" path="res://obstacle.gd" id="1_scrpt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_87rtl"]
 size = Vector2(80, 62.5)
 
 [node name="ObstacleStul" type="Area2D"]
+script = ExtResource("1_scrpt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(493, 655)
