@@ -7,9 +7,15 @@ const SAVE_PATH := "user://scoreboard.save"
 var banana_total := 0
 const BANANA_SAVE_PATH := "user://bananas.save"
 
+# Persistent achievement completion
+var achievements_completed := []
+const ACHIEVEMENTS_SAVE_PATH := "user://achievements.save"
+const ACHIEVEMENTS_COUNT := 9
+
 func _ready():
-		load_scores()
-		load_bananas()
+                load_scores()
+                load_bananas()
+                load_achievements()
 
 func save_score(distance: float, name: String):
 		top_scores.append({ "name": name, "score": distance })
@@ -45,8 +51,32 @@ func save_bananas():
 		file.store_var(banana_total)
 
 func load_bananas():
-		if FileAccess.file_exists(BANANA_SAVE_PATH):
-				var file = FileAccess.open(BANANA_SAVE_PATH, FileAccess.READ)
-				banana_total = file.get_var()
-		else:
-				banana_total = 0
+                if FileAccess.file_exists(BANANA_SAVE_PATH):
+                                var file = FileAccess.open(BANANA_SAVE_PATH, FileAccess.READ)
+                                banana_total = file.get_var()
+                else:
+                                banana_total = 0
+
+# -- Achievement persistence ---------------------------------------------
+func save_achievements():
+                var file = FileAccess.open(ACHIEVEMENTS_SAVE_PATH, FileAccess.WRITE)
+                file.store_var(achievements_completed)
+
+func load_achievements():
+                if FileAccess.file_exists(ACHIEVEMENTS_SAVE_PATH):
+                                var file = FileAccess.open(ACHIEVEMENTS_SAVE_PATH, FileAccess.READ)
+                                achievements_completed = file.get_var()
+                                if achievements_completed.size() < ACHIEVEMENTS_COUNT:
+                                                var old_size = achievements_completed.size()
+                                                achievements_completed.resize(ACHIEVEMENTS_COUNT)
+                                                for i in range(old_size, ACHIEVEMENTS_COUNT):
+                                                                achievements_completed[i] = false
+                else:
+                                achievements_completed.resize(ACHIEVEMENTS_COUNT)
+                                for i in ACHIEVEMENTS_COUNT:
+                                                achievements_completed[i] = false
+
+func mark_achievement(idx: int):
+                if idx >= 0 and idx < ACHIEVEMENTS_COUNT:
+                                achievements_completed[idx] = true
+                                save_achievements()

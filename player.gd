@@ -79,12 +79,13 @@ func _physics_process(delta):
 		
 		var t = hold_time / MAX_HOLD_TIME
 		var curved = jump_curve.sample(t)
-		var jump_force = lerp(BASE_JUMP_STRENGTH, MAX_JUMP_STRENGTH, curved)
-		velocity.y = jump_force
+                var jump_force = lerp(BASE_JUMP_STRENGTH, MAX_JUMP_STRENGTH, curved)
+                velocity.y = jump_force
 
-		jump_sound.play()
-		train_node.set_moving(true)
-		start_parallax_transition(background_node.get_current_speed(), parallax_speed_air)
+                jump_sound.play()
+                ui_node.add_jump()
+                train_node.set_moving(true)
+                start_parallax_transition(background_node.get_current_speed(), parallax_speed_air)
 
 	var now_on_floor = is_on_floor()
 	if not was_on_floor and now_on_floor:
