@@ -86,18 +86,17 @@ func update_scoreboard():
 	scoreboard.get_node("Label6").text = "3. %s" % Hra.get_score_string(2)
 
 func _update_achievements():
-	for i in ACHIEVEMENTS.size():
-		var ach = ACHIEVEMENTS[i]
-		var unlocked := false
-		if ach.type == "distance":
-			unlocked = current_distance >= ach.value
-		else:
-			unlocked = Hra.banana_total >= ach.value
-			unlocked = unlocked or (i < Hra.achievements_completed.size() and Hra.achievements_completed[i])
+        for i in ACHIEVEMENTS.size():
+                var ach = ACHIEVEMENTS[i]
+                var unlocked := i < Hra.achievements_completed.size() and Hra.achievements_completed[i]
+                if ach.type == "distance":
+                        unlocked = unlocked or current_distance >= ach.value
+                else:
+                        unlocked = unlocked or Hra.banana_total >= ach.value
 
-		var btn: Button = achievement_buttons[i]
-		btn.text = ach.label
-		btn.button_pressed = unlocked
+                var btn: Button = achievement_buttons[i]
+                btn.text = ach.label
+                btn.button_pressed = unlocked
 
 func _on_restart_pressed():
 	transition_anim.play("blesk")
