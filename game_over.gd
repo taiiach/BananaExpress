@@ -39,9 +39,9 @@ func _ready():
 		# Build achievements UI
 		achievements_container = VBoxContainer.new()
 		$ColorRect.add_child(achievements_container)
-                achievements_container.anchor_left = 0
-                achievements_container.anchor_top = 0
-                achievements_container.position = Vector2(20, 100)
+		achievements_container.anchor_left = 0
+		achievements_container.anchor_top = 0
+		achievements_container.position = Vector2(20, 100)
 
 		for ach in ACHIEVEMENTS:
 			var btn := Button.new()
@@ -78,17 +78,17 @@ func update_scoreboard():
 		scoreboard.get_node("Label6").text = "3. %s" % Hra.get_score_string(2)
 
 func _update_achievements():
-                for i in ACHIEVEMENTS.size():
-                                var ach = ACHIEVEMENTS[i]
-                                var unlocked := false
-                                if ach.type == "distance":
-                                                unlocked = current_distance >= ach.value
-                                else:
-                                                unlocked = Hra.banana_total >= ach.value
-                                unlocked = unlocked or (i < Hra.achievements_completed.size() and Hra.achievements_completed[i])
+	for i in ACHIEVEMENTS.size():
+		var ach = ACHIEVEMENTS[i]
+		var unlocked := false
+		if ach.type == "distance":
+			unlocked = current_distance >= ach.value
+		else:
+			unlocked = Hra.banana_total >= ach.value
+			unlocked = unlocked or (i < Hra.achievements_completed.size() and Hra.achievements_completed[i])
 
-				var btn: Button = achievement_buttons[i]
-				btn.text = ("\u2713 " + ach.label) if unlocked else ach.label
+			var btn: Button = achievement_buttons[i]
+			btn.text = ("\u2713 " + ach.label) if unlocked else ach.label
 
 func _on_restart_pressed():
 	transition_anim.play("blesk")

@@ -22,14 +22,14 @@ var unlocked := []
 @onready var achievement_popup: Button = $AchievementPopup
 
 func _ready():
-                bananas = Hra.banana_total
-                unlocked = Hra.achievements_completed.duplicate()
-                if unlocked.size() < ACHIEVEMENTS.size():
-                                unlocked.resize(ACHIEVEMENTS.size())
-                                for i in ACHIEVEMENTS.size():
-                                                if i >= Hra.achievements_completed.size():
-                                                                unlocked[i] = false
-                achievement_popup.hide()
+				bananas = Hra.banana_total
+				unlocked = Hra.achievements_completed.duplicate()
+				if unlocked.size() < ACHIEVEMENTS.size():
+								unlocked.resize(ACHIEVEMENTS.size())
+								for i in ACHIEVEMENTS.size():
+												if i >= Hra.achievements_completed.size():
+																unlocked[i] = false
+				achievement_popup.hide()
 
 func _process(delta):
 				# Tady se distance pouze zobrazuje
@@ -51,19 +51,19 @@ func reset_distance():
 		distance = 0.0
 
 func _check_achievements():
-                for i in ACHIEVEMENTS.size():
-                                if unlocked[i]:
-                                                continue
-                                var ach = ACHIEVEMENTS[i]
-                                var condition := false
-                                if ach.type == "distance":
-                                                condition = distance >= ach.value
-                                else:
-                                                condition = bananas >= ach.value
-                                if condition:
-                                                unlocked[i] = true
-                                                _show_achievement(ach.label)
-                                                Hra.mark_achievement(i)
+				for i in ACHIEVEMENTS.size():
+								if unlocked[i]:
+												continue
+								var ach = ACHIEVEMENTS[i]
+								var condition := false
+								if ach.type == "distance":
+												condition = distance >= ach.value
+								else:
+												condition = bananas >= ach.value
+								if condition:
+												unlocked[i] = true
+												_show_achievement(ach.label)
+												Hra.mark_achievement(i)
 
 func _show_achievement(text: String):
 		achievement_popup.text = text
