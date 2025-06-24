@@ -12,14 +12,14 @@ var achievements_container: VBoxContainer
 
 # Definitions for achievements
 const ACHIEVEMENTS := [
-	{"label": "100m", "type": "distance", "value": 100.0},
-	{"label": "250m", "type": "distance", "value": 250.0},
-	{"label": "500m", "type": "distance", "value": 500.0},
-	{"label": "750m", "type": "distance", "value": 750.0},
-	{"label": "1000m", "type": "distance", "value": 1000.0},
-	{"label": "10 bananas", "type": "bananas", "value": 10},
-	{"label": "50 bananas", "type": "bananas", "value": 50},
-	{"label": "100 bananas", "type": "bananas", "value": 100},
+	{"label": "100m jumped", "type": "distance", "value": 100.0},
+	{"label": "250m jumped", "type": "distance", "value": 250.0},
+	{"label": "500m jumped", "type": "distance", "value": 500.0},
+	{"label": "750m jumped", "type": "distance", "value": 750.0},
+	{"label": "1000m jumped", "type": "distance", "value": 1000.0},
+	{"label": "10 freaky Banan&s", "type": "bananas", "value": 10},
+	{"label": "50 freaky Banan&s", "type": "bananas", "value": 50},
+	{"label": "100 freaky Banan&s", "type": "bananas", "value": 100},
 ]
 
 var achievement_buttons: Array = []
@@ -32,39 +32,39 @@ var current_distance := 0.0
 var current_skipped := 0
 
 func _ready():
-		visible = false
-		save_button.pressed.connect(_on_save_pressed)
-		restart_button.pressed.connect(_on_restart_pressed)
+	visible = false
+	save_button.pressed.connect(_on_save_pressed)
+	restart_button.pressed.connect(_on_restart_pressed)
 
-		# Build achievements UI
-		achievements_container = VBoxContainer.new()
-		$ColorRect.add_child(achievements_container)
-		achievements_container.anchor_left = 0
-		achievements_container.anchor_top = 0
-		achievements_container.position = Vector2(20, 100)
+	# Build achievements UI
+	achievements_container = VBoxContainer.new()
+	$ColorRect.add_child(achievements_container)
+	achievements_container.anchor_left = 0
+	achievements_container.anchor_top = 0
+	achievements_container.position = Vector2(870, 250)
 
-		for ach in ACHIEVEMENTS:
-			var btn := Button.new()
-			btn.text = ach["label"]
-			btn.disabled = true
-			achievements_container.add_child(btn)
-			achievement_buttons.append(btn)
+	for ach in ACHIEVEMENTS:
+		var btn := Button.new()
+		btn.text = ach["label"]
+		btn.disabled = true
+		achievements_container.add_child(btn)
+		achievement_buttons.append(btn)
 
-			# Make the name input wider for easier typing
-			line_edit.custom_minimum_size = Vector2(250, 0)
+		# Make the name input wider for easier typing
+		line_edit.custom_minimum_size = Vector2(250, 0)
 
 func show_gameover(distance: float, wagons: int):
-		current_distance = distance
-		current_skipped = wagons
-		label_metry.text = "Uletěl jsi %.2f m\nPřeskočil jsi %d vagónů" % [distance, wagons]
-		_update_achievements()
-		visible = true
-		line_edit.grab_focus()
+	current_distance = distance
+	current_skipped = wagons
+	label_metry.text = "Uletěl jsi %.2f m\nPřeskočil jsi %d vagónů" % [distance, wagons]
+	_update_achievements()
+	visible = true
+	line_edit.grab_focus()
 
 func _on_save_pressed():
 	var playername = line_edit.text.strip_edges()
 	if playername == "":
-		playername = "Anonym"
+		playername = "Banksy"
 		Hra.save_score(current_distance, playername)  # předpoklad, že máš Game singleton (nebo to přepíšeme)
 	else:
 		Hra.save_score(current_distance, playername)
@@ -73,9 +73,9 @@ func _on_save_pressed():
 	save_button.disabled = true
 
 func update_scoreboard():
-		scoreboard.get_node("Label4").text = "1. %s" % Hra.get_score_string(0)
-		scoreboard.get_node("Label5").text = "2. %s" % Hra.get_score_string(1)
-		scoreboard.get_node("Label6").text = "3. %s" % Hra.get_score_string(2)
+	scoreboard.get_node("Label4").text = "1. %s" % Hra.get_score_string(0)
+	scoreboard.get_node("Label5").text = "2. %s" % Hra.get_score_string(1)
+	scoreboard.get_node("Label6").text = "3. %s" % Hra.get_score_string(2)
 
 func _update_achievements():
 	for i in ACHIEVEMENTS.size():
@@ -87,8 +87,8 @@ func _update_achievements():
 			unlocked = Hra.banana_total >= ach.value
 			unlocked = unlocked or (i < Hra.achievements_completed.size() and Hra.achievements_completed[i])
 
-			var btn: Button = achievement_buttons[i]
-			btn.text = ("\u2713 " + ach.label) if unlocked else ach.label
+		var btn: Button = achievement_buttons[i]
+		btn.text = ("\u2713 " + ach.label) if unlocked else ach.label
 
 func _on_restart_pressed():
 	transition_anim.play("blesk")

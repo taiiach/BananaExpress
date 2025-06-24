@@ -36,13 +36,6 @@
 [ext_resource type="PackedScene" uid="uid://c7fy4ba4s1ti8" path="res://Banana.tscn" id="32_ban"]
 [ext_resource type="Texture2D" uid="uid://csnhnjduld8wu" path="res://img/itemy/banana.png" id="33_icon"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_d13ii"]
-font = ExtResource("1_ryguw")
-font_size = 79
-shadow_size = 8
-shadow_color = Color(0, 0, 0, 0.556863)
-shadow_offset = Vector2(4.815, 2.665)
-
 [sub_resource type="Curve" id="Curve_getpj"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
@@ -205,52 +198,18 @@ _data = {
 &"blesk": SubResource("Animation_lswn8")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_d13ii"]
+font = ExtResource("1_ryguw")
+font_size = 79
+shadow_size = 8
+shadow_color = Color(0, 0, 0, 0.556863)
+shadow_offset = Vector2(4.815, 2.665)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a6jrf"]
 size = Vector2(900, 900)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_1u8w0")
-
-[node name="UI" type="CanvasLayer" parent="."]
-script = ExtResource("1_d13ii")
-
-[node name="ScoreLabel" type="Label" parent="UI"]
-offset_right = 1279.0
-offset_bottom = 115.0
-text = "0.00m"
-label_settings = SubResource("LabelSettings_d13ii")
-horizontal_alignment = 1
-language = "cs"
-
-[node name="BananaLabel" type="Label" parent="UI"]
-offset_right = 1188.0
-offset_bottom = 107.0
-text = "0"
-label_settings = SubResource("LabelSettings_d13ii")
-horizontal_alignment = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="UI"]
-position = Vector2(1234, 49)
-scale = Vector2(0.0744629, 0.0744629)
-texture = ExtResource("33_icon")
-
-[node name="AchievementPopup" type="Button" parent="UI"]
-visible = false
-offset_left = 490.0
-offset_top = 320.0
-offset_right = 790.0
-offset_bottom = 360.0
-disabled = true
-text = "ACHIEVEMENT"
-
-[node name="AchievementPopup2" type="Button" parent="UI"]
-visible = false
-offset_left = 490.0
-offset_top = 320.0
-offset_right = 790.0
-offset_bottom = 360.0
-disabled = true
-text = "ACHIEVEMENT"
 
 [node name="Background" type="Node2D" parent="."]
 script = ExtResource("3_h2yge")
@@ -307,7 +266,7 @@ transition_player_path = NodePath("../TransitionPlayer")
 [node name="ColorRect" type="ColorRect" parent="GameOver"]
 offset_right = 1282.0
 offset_bottom = 720.0
-color = Color(0, 0, 0, 0.431373)
+color = Color(0, 0, 0, 0.560784)
 
 [node name="CenterContainer" type="CenterContainer" parent="GameOver/ColorRect"]
 layout_mode = 0
@@ -326,7 +285,7 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="GameOver/ColorRect/CenterContainer/VBoxContainer"]
 layout_mode = 2
-text = "Uletěl jsi: "
+text = "You've jumped: "
 label_settings = SubResource("LabelSettings_lswn8")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="GameOver/ColorRect/CenterContainer/VBoxContainer"]
@@ -334,7 +293,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="GameOver/ColorRect/CenterContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Jméno:"
+text = "Nickname:"
 label_settings = SubResource("LabelSettings_a6jrf")
 
 [node name="LineEdit" type="LineEdit" parent="GameOver/ColorRect/CenterContainer/VBoxContainer/HBoxContainer"]
@@ -342,14 +301,14 @@ layout_mode = 2
 
 [node name="Button" type="Button" parent="GameOver/ColorRect/CenterContainer/VBoxContainer"]
 layout_mode = 2
-text = "ULOŽIT"
+text = "S&VE TH1S"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="GameOver/ColorRect/CenterContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="Label3" type="Label" parent="GameOver/ColorRect/CenterContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "Nejlepší skóre:"
+text = "BEST RUNS:"
 label_settings = SubResource("LabelSettings_xuqvo")
 horizontal_alignment = 1
 
@@ -381,6 +340,47 @@ offset_bottom = 726.0
 libraries = {
 &"": SubResource("AnimationLibrary_xuqvo")
 }
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("1_d13ii")
+
+[node name="ScoreLabel" type="Label" parent="UI"]
+offset_right = 1279.0
+offset_bottom = 115.0
+text = "0.00m"
+label_settings = SubResource("LabelSettings_d13ii")
+horizontal_alignment = 1
+language = "cs"
+
+[node name="BananaLabel" type="Label" parent="UI"]
+offset_right = 1188.0
+offset_bottom = 107.0
+text = "0"
+label_settings = SubResource("LabelSettings_d13ii")
+horizontal_alignment = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="UI"]
+position = Vector2(1234, 49)
+scale = Vector2(0.0744629, 0.0744629)
+texture = ExtResource("33_icon")
+
+[node name="AchievementPopup" type="Button" parent="UI"]
+visible = false
+offset_left = 490.0
+offset_top = 320.0
+offset_right = 790.0
+offset_bottom = 360.0
+disabled = true
+text = "ACHIEVEMENT"
+
+[node name="AchievementPopup2" type="Button" parent="UI"]
+visible = false
+offset_left = 490.0
+offset_top = 320.0
+offset_right = 790.0
+offset_bottom = 360.0
+disabled = true
+text = "ACHIEVEMENT"
 
 [node name="MobileUI" type="CanvasLayer" parent="."]
 
