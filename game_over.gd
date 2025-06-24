@@ -32,26 +32,32 @@ var current_distance := 0.0
 var current_skipped := 0
 
 func _ready():
-	visible = false
-	save_button.pressed.connect(_on_save_pressed)
-	restart_button.pressed.connect(_on_restart_pressed)
+        visible = false
+        save_button.pressed.connect(_on_save_pressed)
+        restart_button.pressed.connect(_on_restart_pressed)
 
-	# Build achievements UI
-	achievements_container = VBoxContainer.new()
-	$ColorRect.add_child(achievements_container)
-	achievements_container.anchor_left = 0
-	achievements_container.anchor_top = 0
-	achievements_container.position = Vector2(870, 250)
+        # Build achievements UI
+        achievements_container = VBoxContainer.new()
+        $ColorRect.add_child(achievements_container)
+        achievements_container.anchor_left = 0
+        achievements_container.anchor_top = 0
+        achievements_container.position = Vector2(870, 230)
 
-	for ach in ACHIEVEMENTS:
-		var btn := Button.new()
-		btn.text = ach["label"]
-		btn.disabled = true
-		achievements_container.add_child(btn)
-		achievement_buttons.append(btn)
+        # Label above the achievements
+        var ach_label := Label.new()
+        ach_label.text = "Achievements"
+        achievements_container.add_child(ach_label)
 
-		# Make the name input wider for easier typing
-		line_edit.custom_minimum_size = Vector2(250, 0)
+        for ach in ACHIEVEMENTS:
+                var btn := Button.new()
+                btn.text = ach["label"]
+                btn.disabled = true
+                btn.toggle_mode = true
+                achievements_container.add_child(btn)
+                achievement_buttons.append(btn)
+
+        # Make the name input wider for easier typing
+        line_edit.custom_minimum_size = Vector2(250, 0)
 
 func show_gameover(distance: float, wagons: int):
 	current_distance = distance
@@ -87,8 +93,9 @@ func _update_achievements():
 			unlocked = Hra.banana_total >= ach.value
 			unlocked = unlocked or (i < Hra.achievements_completed.size() and Hra.achievements_completed[i])
 
-		var btn: Button = achievement_buttons[i]
-		btn.text = ("\u2713 " + ach.label) if unlocked else ach.label
+               var btn: Button = achievement_buttons[i]
+               btn.text = ach.label
+               btn.button_pressed = unlocked
 
 func _on_restart_pressed():
 	transition_anim.play("blesk")
