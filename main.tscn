@@ -250,6 +250,8 @@ volume_db = -7.172
 [node name="JumpSound" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource("24_4k2k6")
 
+[node name="BananaSound" type="AudioStreamPlayer" parent="Player"]
+
 [node name="Train" type="Node2D" parent="."]
 script = ExtResource("20_getpj")
 wagon_scene = ExtResource("21_getpj")
@@ -381,6 +383,8 @@ offset_right = 790.0
 offset_bottom = 360.0
 disabled = true
 text = "ACHIEVEMENT"
+
+[node name="AchievementSound" type="AudioStreamPlayer" parent="UI"]
 
 [node name="MobileUI" type="CanvasLayer" parent="."]
 
