@@ -67,12 +67,12 @@ func _check_achievements():
 			Hra.mark_achievement(i)
 
 func _show_achievement(text: String):
-        achievement_popup.text = text
-        achievement_popup.show()
-        if achievement_sound:
-                achievement_sound.play()
-        achievement_popup.modulate.a = 0.0
-        var tw = create_tween()
+	achievement_popup.text = text
+	achievement_popup.show()
+	if achievement_sound:
+		achievement_sound.play()
+	achievement_popup.modulate.a = 0.0
+	var tw = create_tween()
 	tw.tween_property(achievement_popup, "modulate:a", 1.0, 0.4)
 	tw.tween_interval(1.2)
 	tw.tween_property(achievement_popup, "modulate:a", 0.0, 0.4)

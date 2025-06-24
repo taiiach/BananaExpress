@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://c6lchxmek3any"]
+[gd_scene load_steps=52 format=3 uid="uid://c6lchxmek3any"]
 
 [ext_resource type="Script" uid="uid://biumaho1mi0ur" path="res://main.gd" id="1_1u8w0"]
 [ext_resource type="Script" uid="uid://dbb0m3gh8pibb" path="res://ui.gd" id="1_d13ii"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://bocdg1b3naupy" path="res://img/char_midair/midair_1.png" id="18_getpj"]
 [ext_resource type="Script" uid="uid://fjkyie7j6hxs" path="res://train.gd" id="20_getpj"]
 [ext_resource type="PackedScene" uid="uid://nqfl0x6pal6f" path="res://Wagon.tscn" id="21_getpj"]
+[ext_resource type="AudioStream" uid="uid://cc075wrrw34r8" path="res://sounds/Bump.ogg" id="23_facbu"]
 [ext_resource type="AudioStream" uid="uid://dxsqook10nm17" path="res://sounds/charging_jump.ogg" id="23_jq2sk"]
 [ext_resource type="AudioStream" uid="uid://tlhswi01gcul" path="res://sounds/cartoon_jump.ogg" id="24_4k2k6"]
 [ext_resource type="Script" uid="uid://c10scfg7bjumk" path="res://game_over.gd" id="25_0odxb"]
@@ -35,6 +36,7 @@
 [ext_resource type="AudioStream" uid="uid://drqvifxds25bj" path="res://sounds/railway.ogg" id="31_seu75"]
 [ext_resource type="PackedScene" uid="uid://c7fy4ba4s1ti8" path="res://Banana.tscn" id="32_ban"]
 [ext_resource type="Texture2D" uid="uid://csnhnjduld8wu" path="res://img/itemy/banana.png" id="33_icon"]
+[ext_resource type="AudioStream" uid="uid://dvxqlxokickh6" path="res://sounds/Powerup.ogg" id="35_b1qrp"]
 
 [sub_resource type="Curve" id="Curve_getpj"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -251,6 +253,7 @@ volume_db = -7.172
 stream = ExtResource("24_4k2k6")
 
 [node name="BananaSound" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource("23_facbu")
 
 [node name="Train" type="Node2D" parent="."]
 script = ExtResource("20_getpj")
@@ -385,6 +388,8 @@ disabled = true
 text = "ACHIEVEMENT"
 
 [node name="AchievementSound" type="AudioStreamPlayer" parent="UI"]
+stream = ExtResource("35_b1qrp")
+volume_db = 0.039
 
 [node name="MobileUI" type="CanvasLayer" parent="."]
 

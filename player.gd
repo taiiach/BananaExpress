@@ -123,15 +123,15 @@ func start_parallax_transition(from_speed: float, to_speed: float):
 	parallax_active = true
 
 func die():
-        is_dead = true
-        gameover_node.show_gameover(distance_traveled, wagons_skipped)
+	is_dead = true
+	gameover_node.show_gameover(distance_traveled, wagons_skipped)
 
 func register_wagon(id: int):
-        if id != last_wagon_id:
-                wagons_skipped += 1
-                last_wagon_id = id
+	if id != last_wagon_id:
+		wagons_skipped += 1
+		last_wagon_id = id
 
 func collect_banana(amount: int = 1):
-        ui_node.add_banana(amount)
-        if banana_collect_sound:
-                banana_collect_sound.play()
+	ui_node.add_banana(amount)
+	if banana_collect_sound:
+		banana_collect_sound.play()
