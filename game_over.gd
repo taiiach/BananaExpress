@@ -48,13 +48,15 @@ func _ready():
 	ach_label.text = "      	Achievements"
 	achievements_container.add_child(ach_label)
 
-	for ach in ACHIEVEMENTS:
-		var btn := Button.new()
-		btn.text = ach["label"]
-		btn.disabled = true
-		btn.toggle_mode = true
-		achievements_container.add_child(btn)
-		achievement_buttons.append(btn)
+        for ach in ACHIEVEMENTS:
+                var btn := Button.new()
+                btn.text = ach["label"]
+                btn.toggle_mode = true
+                # Keep the button enabled but ignore any mouse interaction
+                btn.mouse_filter = Control.MOUSE_FILTER_IGNORE
+                btn.focus_mode = Control.FOCUS_NONE
+                achievements_container.add_child(btn)
+                achievement_buttons.append(btn)
 
 		# Make the name input wider for easier typing
 		line_edit.custom_minimum_size = Vector2(250, 0)
